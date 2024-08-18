@@ -1,16 +1,33 @@
+# .gitlab-ci.yml
+
 # The Docker image that will be used to build your app
 image: node:20.9.0
-# Functions that should be executed before the build script is run
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
 before_script:
-  - npm ci
-pages:
+  - npm install
+
+build:
+  stage: build
   script:
     - npm run build
   artifacts:
     paths:
-      # The folder that contains the files to be exposed at the Page URL
+      - build/
+
+pages:
+  stage: deploy
+  script:
+    - mv build public
+  artifacts:
+    paths:
       - public
-  rules:
-    # This ensures that only pushes to the default branch will trigger
-    # a pages deploy
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  only:
+    - main
