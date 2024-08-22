@@ -14,9 +14,13 @@ cache:
 before_script:
   - npm install
 
+variables:
+  CI: "false"
+
 build:
   stage: build
   script:
+    - npm install
     - npm run build
   artifacts:
     paths:
@@ -24,10 +28,9 @@ build:
 
 pages:
   stage: deploy
+  needs: [build]
   script:
-    - mv build public
+    - cp -r build/* public
   artifacts:
     paths:
       - public
-  only:
-    - main
