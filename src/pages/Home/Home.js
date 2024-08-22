@@ -1,13 +1,25 @@
 import React from 'react';
+import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
-// import './Home.css';
+import Container from '../../components/Container/Container';
+import Footer from '../../components/Footer/Footer';
+import Experience from '../../components/Experience/Experience';
+import BodyContent from '../../components/BodyContent/BodyContent';
+import BodyContentReversed from '../../components/BodyContent/BodyContentReversed';
+import ProductsContainer from '../../components/ProductsContainer/ProductsContainer';
 
 const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <h2>Welcome to Sid Exports</h2>
-      <p>This is website of Sid Dry Fish Exports.</p>
+      <Container />
+      <BodyContent />
+      <BodyContentReversed />
+      <ProductsContainer />
+      {/* <h2>Welcome to Sid Exports</h2>
+      <p>This is website of Sid Dry Fish Exports.</p> */}
+      <Experience />
+      <Footer />
     </div>
   );
 };

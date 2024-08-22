@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../assets/images/salt_fish.jpg'); /* Ensure the image path is correct */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-name {
+    font-family: 'Montserrat', sans-serif; /* Modern and clean font */
+    color: #ffffff; /* White color for better readability */
+    font-size: 3.5em; /* Adjusted font size for balance */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); /* Gradient background for depth */
+    padding: 20px 40px; /* Adds space around the text */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+    animation: fadeIn 2s ease-in-out; /* Subtle fade-in animation */
+    position: absolute;
+    bottom: 20%; /* Positioning text strategically */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
