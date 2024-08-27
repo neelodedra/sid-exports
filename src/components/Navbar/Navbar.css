@@ -1,64 +1,97 @@
 :root {
-    /* Coastal Theme */
-    --background-color: #FAF3E0;
-    --primary-color: #0077B6;
-    --accent-color: #E76F51;
-    --secondary-color: #F4A261;
-    --text-color: #023047;
-    /* Rustic Fisherman Theme */
-    /* --background-color: #FFF8E1;
-    --primary-color: #2A9D8F;
-    --accent-color: #F4A261;
-    --secondary-color: #8D6E63;
-    --text-color: #264653; */
-    /* Modern Minimalist Theme */
-    /*= --background-color: #F8F9FA;
-    --primary-color: #023E8A;
-    --accent-color: #EF476F;
-    --secondary-color: #FFD166;
-    --text-color: #212529; */
+  --background-color: #FAF3E0;
+  --primary-color: #0077B6;
+  --accent-color: #E76F51;
+  --secondary-color: #F4A261;
+  --text-color: #023047;
+}
 
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background-color); /* Background color */
-    padding: 10px 20px;
-  }
-  
-  .logo {
-    font-size: 1.5em;
-    color: var(--primary-color); /* Primary color */
-  }
-  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color); /* Background color */
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000; /* Ensure navbar is above other elements */
+}
+
+.logo {
+  font-size: 1.5em;
+  color: var(--primary-color); /* Primary color */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-color); /* Primary color */
+  font-size: 1em;
+}
+
+.contact-button {
+  background-color: var(--accent-color); /* Accent color */
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-right: 10px; /* Add space between button and menu icon */
+}
+
+.contact-button:hover {
+  background-color: var(--secondary-color); /* Secondary color */
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5em;
+  color: var(--primary-color); /* Primary color */
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Ensure menu appears below the navbar */
+    left: 0;
+    background-color: var(--background-color); /* Background color */
+    border-top: 1px solid var(--primary-color); /* Primary color */
+    z-index: 999; /* Ensure menu is above other elements */
+  }
+
+  .nav-links.open {
     display: flex;
-    list-style: none;
   }
-  
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
   .nav-links li {
-    margin: 0 15px;
+    margin: 10px 0;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--primary-color); /* Primary color */
-    font-size: 1em;
+
+  .menu-icon {
+    display: block;
   }
-  
-  .contact-button {
-    background-color: var(--accent-color); /* Accent color */
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-  }
-  
-  .contact-button:hover {
-    background-color: var(--secondary-color); /* Secondary color */
-  }
-  
+}

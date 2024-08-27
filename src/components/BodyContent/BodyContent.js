@@ -12,7 +12,7 @@ const BodyContent = () => {
         <p>You can be sure that your supply chain is strengthened with the best when you work with SID DRY FISH EXPORTS.</p>
       </div>
       <div className="image-section">
-      <img src={fish} alt="Quality Inspection" />
+        <img src={fish} alt="Quality Inspection" />
       </div>
     </div>
   );

@@ -1,45 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .banner {
-    /*background-image: url('../../assets/images/ship.jpg'); /* Add your background image path */
-    background-size: cover;
-    background-position: center;
-    padding: 50px 0;
-    color: var(--text-color); /* Text color */
-    text-align: center;
-  }
-  
-  .banner-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: var(--text-color); /* Text color */
+  text-align: center;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-logo h1 {
+  font-size: 5em;
+  color: var(--primary-color); /* Primary color */
+}
+
+.banner-text h2 {
+  font-size: 2.5em;
+  color: var(--primary-color); /* Primary color */
+}
+
+.banner-text p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.about-button {
+  background-color: var(--accent-color); /* Accent color */
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.about-button:hover {
+  background-color: var(--secondary-color); /* Secondary color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .banner-logo h1 {
-    font-size: 5em;
-    color: var(--primary-color); /* Primary color */
+    font-size: 3em; /* Adjust font size for smaller screens */
   }
-  
+
   .banner-text h2 {
-    font-size: 2.5em;
-    color: var(--primary-color); /* Primary color */
+    font-size: 2em; /* Adjust font size for smaller screens */
   }
-  
+
   .banner-text p {
-    font-size: 1.2em;
-    margin: 20px 0;
+    font-size: 1em; /* Adjust font size for smaller screens */
   }
-  
+
   .about-button {
-    background-color: var(--accent-color); /* Accent color */
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    font-size: 0.9em; /* Adjust font size for smaller screens */
   }
-  
-  .about-button:hover {
-    background-color: var(--secondary-color); /* Secondary color */
-  }
-  
+}

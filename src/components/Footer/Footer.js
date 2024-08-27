@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section about">
           <h2>SID DRY FISH EXPORTS</h2>
-          <p>Leading in international fish trade with over two decades of dedicated service ensuring top-notch quality.</p>
+          <p>Leading in international fish trade with over two decades of <br /> dedicated service ensuring top-notch quality.</p>
           <div className="social-media">
             <a href="#"><i className="fab fa-facebook-f"></i></a>
             <a href="#"><i className="fab fa-twitter"></i></a>

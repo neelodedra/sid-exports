@@ -76,3 +76,22 @@
     display: none;
   }
   
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .products-container h2 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .product-card {
+    width: 200px; /* Adjust width for smaller screens */
+  }
+
+  .product-card img {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .scroll-button {
+    font-size: 1.5em; /* Adjust button size for smaller screens */
+    padding: 8px;
+  }
+}
