@@ -4,8 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
 import Experience from '../../components/Experience/Experience';
-import BodyContent from '../../components/BodyContent/BodyContent';
-import BodyContentReversed from '../../components/BodyContent/BodyContentReversed';
+import { BodyContent, BodyContentReversed } from '../../components/BodyContent/BodyContent';
 import ProductsContainer from '../../components/ProductsContainer/ProductsContainer';
 
 const Home = () => {
