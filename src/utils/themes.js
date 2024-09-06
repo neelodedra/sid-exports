@@ -5,6 +5,7 @@ const themes = {
       '--accent-color': '#E76F51',
       '--secondary-color': '#F4A261',
       '--text-color': '#023047',
+      logo: './logo_t1.png',
     },
     rusticFisherman: {
       '--background-color': '#FFF8E1',
@@ -12,6 +13,7 @@ const themes = {
       '--accent-color': '#F4A261',
       '--secondary-color': '#8D6E63',
       '--text-color': '#264653',
+      logo: './logo_t2.png',
     },
     modernMinimalist: {
       '--background-color': '#F8F9FA',
@@ -19,6 +21,7 @@ const themes = {
       '--accent-color': '#EF476F',
       '--secondary-color': '#FFD166',
       '--text-color': '#212529',
+      logo: './logo_t3.png',
     },
   };
   

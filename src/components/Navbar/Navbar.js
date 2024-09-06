@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+import themes from '../../utils/themes';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ currentTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  console.log(toggleMenu);
+   // Log the logo src to verify
+   const logoSrc = themes[currentTheme].logo;
+   console.log('Logo src:', logoSrc);
 
   return (
     <nav className="navbar">
       <div className="logo">
+        {/* <img src={themes[currentTheme].logo} alt="Logo" className="logo-image" /> */}
+        <img src={logoSrc} alt="Logo" className="logo-image" />
         SID DRY FISH EXPORTS
       </div>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>

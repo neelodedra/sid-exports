@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import themes from '../../utils/themes';
+import Navbar from '../Navbar/Navbar';
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({ onThemeChange }) => {
   const [theme, setTheme] = useState('coastal');
 
   const applyTheme = (themeName) => {
     const theme = themes[themeName];
     for (let key in theme) {
-      document.documentElement.style.setProperty(key, theme[key]);
+      if (key.startsWith('--')) {
+        document.documentElement.style.setProperty(key, theme[key]);
+      }
+    }
+    // Update the logo
+    const logoElement = document.querySelector('link[rel="icon"]');
+    if (logoElement) {
+      logoElement.href = theme.logo;
     }
   };
 
@@ -15,7 +23,12 @@ const ThemeSwitcher = () => {
     const selectedTheme = event.target.value;
     setTheme(selectedTheme);
     applyTheme(selectedTheme);
+    onThemeChange(selectedTheme);
   };
+
+  useEffect(() => {
+    applyTheme(theme);
+  }, [theme]);
 
   return (
     <div>
