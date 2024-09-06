@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <Home />
-      <ThemeSwitcher />
+      {/* <ThemeSwitcher /> */}
     </div>
   );
 };

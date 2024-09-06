@@ -18,13 +18,13 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar currentTheme={currentTheme} />
-      <ThemeSwitcher onThemeChange={handleThemeChange} />
       <Container />
       <BodyContent />
       <BodyContentReversed />
       <ProductsContainer />
       <Experience />
       <Footer />
+      <ThemeSwitcher onThemeChange={handleThemeChange} />
     </div>
   );
 };
