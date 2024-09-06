@@ -17,7 +17,7 @@ const Navbar = ({ currentTheme }) => {
     <nav className="navbar">
       <div className="logo">
         <img src={logoSrc} alt="Logo" className="logo-image" />
-        DRY FISH EXPORTS
+        SID DRY FISH EXPORTS
       </div>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <ul>
