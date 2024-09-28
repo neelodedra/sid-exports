@@ -1,15 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher';
-// import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import AboutUs from './pages/AboutUs/AboutUs';
+import OurProducts from './pages/OurProducts/OurProducts';
+import Production from './pages/Production/Production';
+import Downloads from './pages/Downloads/Downloads';
+import Blogs from './pages/Blogs/Blogs';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
+  const [currentTheme, setCurrentTheme] = useState('coastal'); // Managing theme in App
+
+  const handleThemeChange = (theme) => {
+    setCurrentTheme(theme);
+  };
+
   return (
-    <div className="App">
-      <Home />
-      {/* <ThemeSwitcher /> */}
-    </div>
+    <Router>
+      <div className="App">
+        {/* Place ThemeSwitcher outside of Routes if it's needed globally */}
+        {/* <ThemeSwitcher onThemeChange={handleThemeChange} /> */}
+        <Navbar currentTheme={currentTheme} />
+        
+        {/* Routes for different components */}
+        <Routes>
+          {/* Path for Home page */}
+          <Route path="/" element={<Home currentTheme={currentTheme} onThemeChange={handleThemeChange} />} />
+          
+          {/* Path for About Us */}
+          <Route path="/about-us" element={<AboutUs />} />
+          
+          {/* Path for Our Products */}
+          <Route path="/our-products" element={<OurProducts />} />
+          
+          {/* Path for Production */}
+          <Route path="/production" element={<Production />} />
+          
+          {/* Path for Downloads */}
+          <Route path="/downloads" element={<Downloads />} />
+          
+          {/* Path for Blogs */}
+          <Route path="/blogs" element={<Blogs />} />
+          
+          {/* Redirect all other paths to Home */}
+          <Route path="*" element={<Home currentTheme={currentTheme} onThemeChange={handleThemeChange} />} />
+        </Routes>
+        
+        {/* Footer should be shown on all pages */}
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

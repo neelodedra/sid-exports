@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import themes from '../../utils/themes';
 import './Navbar.css';
 
@@ -9,9 +10,9 @@ const Navbar = ({ currentTheme }) => {
     setIsOpen(!isOpen);
   };
 
-  // Log the logo src to verify
-  const logoSrc = themes[currentTheme].logo;
-  console.log('Logo src:', logoSrc);
+  // Provide a fallback theme in case currentTheme is undefined or invalid
+  const theme = themes[currentTheme] || themes['coastal']; // Default to 'coastal' theme
+  const logoSrc = theme.logo;
 
   return (
     <nav className="navbar">
@@ -21,12 +22,12 @@ const Navbar = ({ currentTheme }) => {
       </div>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/our-products">Our Products</a></li>
-          <li><a href="/production">Production</a></li>
-          <li><a href="/downloads">Downloads</a></li>
-          <li><a href="/blogs">Blogs</a></li>
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/our-products">Our Products</Link></li>
+          <li><Link to="/production">Production</Link></li>
+          <li><Link to="/downloads">Downloads</Link></li>
+          <li><Link to="/blogs">Blogs</Link></li>
         </ul>
       </div>
       <button className="contact-button">

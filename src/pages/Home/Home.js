@@ -1,30 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Home.css';
-import Navbar from '../../components/Navbar/Navbar';
+// import Navbar from '../../components/Navbar/Navbar';
 import Container from '../../components/Container/Container';
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 import Experience from '../../components/Experience/Experience';
 import { BodyContent, BodyContentReversed } from '../../components/BodyContent/BodyContent';
 import ProductsContainer from '../../components/ProductsContainer/ProductsContainer';
 import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
 
-const Home = () => {
-  const [currentTheme, setCurrentTheme] = useState('coastal');
-
-  const handleThemeChange = (theme) => {
-    setCurrentTheme(theme);
-  };
-
+const Home = ({ currentTheme, onThemeChange }) => {
   return (
     <div className="home">
-      <Navbar currentTheme={currentTheme} />
+      {/* Pass the currentTheme to Navbar */}
+      {/* <Navbar currentTheme={currentTheme} /> */}
       <Container />
       <BodyContent />
       <BodyContentReversed />
       <ProductsContainer />
       <Experience />
-      <Footer />
-      <ThemeSwitcher onThemeChange={handleThemeChange} />
+      {/* <Footer /> */}
+      <ThemeSwitcher onThemeChange={onThemeChange} />
     </div>
   );
 };
