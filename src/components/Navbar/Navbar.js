@@ -25,9 +25,7 @@ const Navbar = ({ currentTheme }) => {
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/about-us">About Us</Link></li>
           <li><Link to="/our-products">Our Products</Link></li>
-          <li><Link to="/production">Production</Link></li>
           <li><Link to="/downloads">Downloads</Link></li>
-          <li><Link to="/blogs">Blogs</Link></li>
         </ul>
       </div>
       <button className="contact-button">

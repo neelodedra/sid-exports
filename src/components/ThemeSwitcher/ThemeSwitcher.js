@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import themes from '../../utils/themes';
-import Navbar from '../Navbar/Navbar';
 
 const ThemeSwitcher = ({ onThemeChange }) => {
   const [theme, setTheme] = useState('coastal');
